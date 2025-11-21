@@ -1,0 +1,173 @@
+/* Layout */
+.dashboard-container {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  min-height: 100vh;
+  border-right: 1px solid #e5e7eb;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item,
+.submenu-item {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.menu-title {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Topbar */
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  width: 60%;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+  font-size: 24px;
+}
+
+.stat-value {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.stat-up {
+  color: #16a34a;
+}
+
+.stat-down {
+  color: #dc2626;
+}
+
+/* Target Card */
+.target-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1.3;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.progress-circle {
+  margin: 15px auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 12px solid #d8def5;
+  border-top-color: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* Charts Section */
+.charts-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.chart-card {
+  background: white;
+  flex: 1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.chart-img {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #e2e8f0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: white;
+}
