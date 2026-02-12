@@ -1,88 +1,125 @@
-const Home = () => {
-  return (
-    <>
-        <div className="dashboard-container">
+import { Link, useLocation } from "react-router-dom";
 
+const Home = () => {
+  const location = useLocation();
+   const active = location.pathname;  
+
+
+  return (
+    <div className="dashboard-container">
       {/* Sidebar */}
       <aside className="sidebar">
-        <h2 className="logo">TailAdmin</h2>
-
+        <div className="logo">Midnight Safari</div>
         <ul className="menu">
-          <li className="menu-item active">Dashboard</li>
-          <li className="submenu-item">Ecommerce</li>
-          <li className="menu-item">Calendar</li>
-          <li className="menu-item">User Profile</li>
-          <li className="menu-item">Forms</li>
-          <li className="menu-item">Tables</li>
-          <li className="menu-item">Pages</li>
-
-          <h4 className="menu-title">OTHERS</h4>
-
-          <li className="menu-item">Charts</li>
-          <li className="menu-item">UI Elements</li>
-          <li className="menu-item">Authentication</li>
+          <Link to="/" style={{ textDecoration: 'none' , color: 'inherit' }}>
+            <li className={`menu-item ${active === "/" ? "active" : ""}`}>
+              🏠 Dashboard
+            </li>
+          </Link>
+          <Link to="/users" style={{ textDecoration: 'none' }}>
+            <li className={`menu-item ${active === "/users" ? "active" : ""}`}>
+              👤 Users
+            </li>
+          </Link>
+         <Link to="/hotels"  style={{textDecoration: 'none'}}>
+         <li className={`menu-item ${active === "/hotels" ? "active": ""}`}>
+         🏨 Hotels</li>
+         </Link> 
+          <li className="menu-item">🎫 Tour Package</li>
+          <li className="menu-item">📅 Booking</li>
+          <li className="menu-item">💰 Payments</li>
+          <li className="menu-item">👨‍👩‍👧‍👦 Team</li>
+          <li className="menu-item">⚙️ Settings</li>
         </ul>
       </aside>
 
-      {/* Main content */}
-      <main className="content">
-        <header className="topbar">
-          <input placeholder="Search or type command..." className="search" />
+      {/* MAIN CONTENT */}
+      <div className="main-content">
+        <div className="topbar">
+          <input className="search" placeholder="Search or type command..." />
           <div className="topbar-right">
             <span className="icon">🔔</span>
             <img
               src="https://i.pravatar.cc/40"
-              alt="user"
+              alt="avatar"
               className="avatar"
             />
           </div>
-        </header>
+        </div>
 
-        {/* Stats row */}
+        {/* Stats Row */}
         <div className="stats-row">
           <div className="stat-card">
-            <div className="stat-icon">👤</div>
-            <h3>Customers</h3>
-            <p className="stat-value">3,782</p>
-            <span className="stat-up">+ 11.01%</span>
+            <div className="stat-icon">🚌</div>
+            <div className="stat-title">Active Tours</div>
+            <div className="stat-value">6</div>
+            <div className="stat-info">2 Delayed</div>
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon">📦</div>
-            <h3>Orders</h3>
-            <p className="stat-value">5,359</p>
-            <span className="stat-down">- 9.05%</span>
+            <div className="stat-icon">📋</div>
+            <div className="stat-title">Bookings</div>
+            <div className="stat-value">132</div>
+            <div className="stat-info">28 Completed</div>
           </div>
 
-          <div className="target-card">
-            <h3>Monthly Target</h3>
-            <div className="progress-circle">
-              <span>75.55%</span>
-            </div>
-            <p>You earn $3287 today, it’s higher than last month.</p>
+          <div className="stat-card">
+            <div className="stat-icon">👨‍💼</div>
+            <div className="stat-title">Travel Agents</div>
+            <div className="stat-value">8</div>
+            <div className="stat-info">1 Inactive</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">😊</div>
+            <div className="stat-title">Customer Satisfaction</div>
+            <div className="stat-value">76%</div>
+            <div className="stat-up">26% Increased</div>
           </div>
         </div>
 
-        {/* Charts */}
-        <div className="charts-section">
-          <div className="chart-card">
-            <h3>Monthly Sales</h3>
-            <img src="/monthly_sales.png" alt="" className="chart-img" />
-          </div>
-
-          <div className="chart-card">
-            <h3>Statistics</h3>
-            <div className="tabs">
-              <span className="tab active">Monthly</span>
-              <span className="tab">Quarterly</span>
-              <span className="tab">Annually</span>
-            </div>
-            <img src="/statistics_chart.png" alt="" className="chart-img" />
+        {/* Active Projects Table */}
+        <div className="projects-section">
+          <h2>Active Projects</h2>
+          <div className="projects-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Progress</th>
+                  <th>Status</th>
+                  <th>Assigned</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Manali Package</td>
+                  <td>
+                    <div className="progress-container">
+                      <div className="progress-bar" style={{ width: "75%" }}></div>
+                      <span className="progress-text">75%</span>
+                    </div>
+                  </td>
+                  <td><span className="status-badge status-on-track">On Track</span></td>
+                  <td><span className="assigned-badge">RK</span></td>
+                </tr>
+                <tr>
+                  <td>Spiti Valley</td>
+                  <td>
+                    <div className="progress-container">
+                      <div className="progress-bar" style={{ width: "45%" }}></div>
+                      <span className="progress-text">45%</span>
+                    </div>
+                  </td>
+                  <td><span className="status-badge status-at-risk">At Risk</span></td>
+                  <td><span className="assigned-badge">AA</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-    </>
   );
 };
 
