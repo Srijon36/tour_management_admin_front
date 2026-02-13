@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../assets/custom.css";   // 🔥 IMPORTANT FIX
 
 function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -9,34 +8,34 @@ function Home() {
   const menuItems = [
     { icon: "🏠", label: "Dashboard", active: true },
     { icon: "🧳", label: "Bookings" },
-    { icon: "🗺️", label: "Tours" },
+    { icon: "✈️", label: "Tours" },
     { icon: "👥", label: "Customers" },
-    { icon: "🌄", label: "Destinations" },
+    { icon: "👨‍👩‍👧‍👦", label: "Teams" },
     { icon: "💳", label: "Payments" },
     { icon: "📊", label: "Reports" },
     { icon: "⚙️", label: "Settings" },
-  ];
-
-  const stats = [
-    { title: "Total Bookings", value: "2,847", change: "+18%", icon: "🛫" },
-    { title: "Total Revenue", value: "$184,920", change: "+12%", icon: "💰" },
-    { title: "New Customers", value: "421", change: "-3%", icon: "👤" },
-    { title: "Cancellation Rate", value: "4.8%", change: "-1.2%", icon: "❌" },
+    { icon: "🔓", label: "Sign out" },
   ];
 
   return (
     <div className={`layout ${darkMode ? "dark" : ""}`}>
       <aside className="sidebar">
-        <div className="logo">Tripco</div>
+        <div>
+          <div className="logo">The Atlas Journeys</div>
 
-        <nav>
-          {menuItems.map((item) => (
-            <a key={item.label} href="#" className={item.active ? "active" : ""}>
-              <span>{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-        </nav>
+          <nav>
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href="#"
+                className={item.active ? "active" : ""}
+              >
+                <span>{item.icon}</span>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
 
         <button className="theme-btn" onClick={toggleDarkMode}>
           {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
@@ -49,26 +48,26 @@ function Home() {
           Welcome back — {new Date().toLocaleDateString()}
         </p>
 
-        <div className="stats">
-          {stats.map((stat, i) => (
-            <div className="card" key={i}>
-              <div className="card-icon">{stat.icon}</div>
-              <div className="card-title">{stat.title}</div>
-              <div className="card-value">{stat.value}</div>
-              <div>
-                <span
-                  className={
-                    stat.change.startsWith("+")
-                      ? "change-positive"
-                      : "change-negative"
-                  }
-                >
-                  {stat.change}
-                </span>{" "}
-                this month
-              </div>
-            </div>
-          ))}
+        <div className="top-stats">
+          <div className="stat-card">
+            <div className="stat-value">6 Tours</div>
+            <div className="stat-label">Active Tours</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-value">132</div>
+            <div className="stat-label">Bookings</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-value">8</div>
+            <div className="stat-label">Travel Agents</div>
+          </div>
+
+          <div className="stat-card highlight">
+            <div className="stat-value">76%</div>
+            <div className="stat-label">Customer Satisfaction</div>
+          </div>
         </div>
       </main>
     </div>
