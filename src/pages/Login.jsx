@@ -23,8 +23,8 @@ const Login = () => {
         {/* RIGHT SIDE - LOGIN BOX */}
         <div className="login-box">
           <div className="brand-header">
-            <h1 className="title">TOUR</h1>
-            <p className="subtitle">MANAGEMENT</p>
+            <h1 className="title">The Atlas </h1>
+            <p className="subtitle">Journeys</p>
           </div>
 
           <form>
