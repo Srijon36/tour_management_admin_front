@@ -2,6 +2,15 @@ import React from "react";
 import "../assets/custom.css";
 
 const Login = () => {
+
+
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  
   return (
     <div className="login-page">
       <div className="content-wrapper">
